@@ -120,49 +120,51 @@ Run 'do-release-upgrade' to upgrade to it.
 
 ```
 
-- Install dirmngr and gpg-agent packages
+- Install gpg-agent package
 
 ```bash
-sudo apt-get -y install dirmngr gpg-agent
+sudo apt-get -y install gpg-agent
 ```
 
 Sample output
 
 ```bash
-$ sudo apt-get -y install dirmngr gpg-agent
+$ sudo apt-get -y install gpg-agent
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 The following additional packages will be installed:
-  pinentry-curses
+  libnpth0 pinentry-curses
 Suggested packages:
-  dbus-user-session pinentry-gnome3 tor scdaemon pinentry-doc
+  dbus-user-session pinentry-gnome3 scdaemon pinentry-doc
 Recommended packages:
   gnupg
 The following NEW packages will be installed:
-  dirmngr gpg-agent pinentry-curses
-0 upgraded, 3 newly installed, 0 to remove and 53 not upgraded.
-Need to get 579 kB of archives.
-After this operation, 1,850 kB of additional disk space will be used.
+  gpg-agent libnpth0 pinentry-curses
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 271 kB of archives.
+After this operation, 1,011 kB of additional disk space will be used.
 Get:1 http://mirrors.ubuntu.com/mirrors.txt Mirrorlist [973 B]
-Get:4 http://mirror.amsiohosting.net/archive.ubuntu.com bionic-updates/main amd64 gpg-agent amd64 2.2.4-1ubuntu1.4 [227 kB]
-Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 dirmngr amd64 2.2.4-1ubuntu1.4 [316 kB]                                 
-Get:3 https://mirror.nl.leaseweb.net/ubuntu bionic/main amd64 pinentry-curses amd64 1.1.0-1 [35.8 kB]                                    
-Fetched 580 kB in 0s (1,317 kB/s)                                   
-Selecting previously unselected package dirmngr.
-(Reading database ... 100030 files and directories currently installed.)
-Preparing to unpack .../dirmngr_2.2.4-1ubuntu1.4_amd64.deb ...
-Unpacking dirmngr (2.2.4-1ubuntu1.4) ...
+Get:3 http://nl.archive.ubuntu.com/ubuntu bionic/main amd64 libnpth0 amd64 1.5-3 [7,668 B]
+Get:2 http://mirror.previder.nl/ubuntu bionic/main amd64 pinentry-curses amd64 1.1.0-1 [35.8 kB]
+Get:4 http://ubuntu.mirror.true.nl/ubuntu bionic-updates/main amd64 gpg-agent amd64 2.2.4-1ubuntu1.4 [227 kB]
+Fetched 272 kB in 0s (612 kB/s)
 Selecting previously unselected package pinentry-curses.
+(Reading database ... 100017 files and directories currently installed.)
 Preparing to unpack .../pinentry-curses_1.1.0-1_amd64.deb ...
 Unpacking pinentry-curses (1.1.0-1) ...
+Selecting previously unselected package libnpth0:amd64.
+Preparing to unpack .../libnpth0_1.5-3_amd64.deb ...
+Unpacking libnpth0:amd64 (1.5-3) ...
 Selecting previously unselected package gpg-agent.
 Preparing to unpack .../gpg-agent_2.2.4-1ubuntu1.4_amd64.deb ...
 Unpacking gpg-agent (2.2.4-1ubuntu1.4) ...
+Setting up libnpth0:amd64 (1.5-3) ...
 Setting up pinentry-curses (1.1.0-1) ...
-Setting up dirmngr (2.2.4-1ubuntu1.4) ...
 Setting up gpg-agent (2.2.4-1ubuntu1.4) ...
 Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1.4) ...
+
 ```
 
 - Add Hashicorp key
