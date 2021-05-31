@@ -22,13 +22,13 @@ Tested on Mac OS X.
 - Clone git repository. 
 
 ```bash
-git clone https://github.com/antonakv/tfe-vagrant-interactive
+git clone https://github.com/antonakv/tfe-vagrant-demo
 ```
 
 Expected command output looks like this:
 
 ```bash
-Cloning into 'tfe-vagrant-interactive'...
+Cloning into 'tfe-vagrant-demo'...
 remote: Enumerating objects: 12, done.
 remote: Counting objects: 100% (12/12), done.
 remote: Compressing objects: 100% (12/12), done.
@@ -37,14 +37,14 @@ Receiving objects: 100% (12/12), done.
 Resolving deltas: 100% (1/1), done.
 ```
 
-- Change folder to tfe-vagrant-interactive
+- Change folder to tfe-vagrant-demo
 
 ```bash
-cd tfe-vagrant-interactive
+cd tfe-vagrant-demo
 ```
 
 - Copy your existing Terraform enterprise license file with extension .rli to 
-folder tfe-vagrant-interactive created on the previous step and rename it to license.rli
+folder tfe-vagrant-demo created on the previous step and rename it to license.rli
 
 ## Installation
 
@@ -57,31 +57,26 @@ vagrant up
 Sample result
 
 ```bash
-$ vagrant up
+$ vagrant up     
 Bringing machine 'default' up with 'virtualbox' provider...
 ==> default: Importing base box 'aakulov/bionic64'...
 ==> default: Matching MAC address for NAT networking...
 ==> default: Checking if box 'aakulov/bionic64' version '21.03.02' is up to date...
-==> default: There was a problem while downloading the metadata for your box
-==> default: to check for updates. This is not an error, since it is usually due
-==> default: to temporary network problems. This is just a warning. The problem
-==> default: encountered was:
-==> default: 
-==> default: The requested URL returned error: 403
-==> default: 
-==> default: If you want to check for box updates, verify your network connection
-==> default: is valid and try again.
-==> default: Setting the name of the VM: tfe-vagrant-interactive_default_1621944905516_44996
+==> default: A newer version of the box 'aakulov/bionic64' for provider 'virtualbox' is
+==> default: available! You currently have version '21.03.02'. The latest is version
+==> default: '21.05.27'. Run `vagrant box update` to update.
+==> default: Setting the name of the VM: tfe-vagrant-demo_default_1622103422132_97669
+==> default: Fixed port collision for 22 => 2222. Now on port 2200.
 ==> default: Clearing any previously set network interfaces...
 ==> default: Preparing network interfaces based on configuration...
     default: Adapter 1: nat
     default: Adapter 2: hostonly
 ==> default: Forwarding ports...
-    default: 22 (guest) => 2222 (host) (adapter 1)
+    default: 22 (guest) => 2200 (host) (adapter 1)
 ==> default: Running 'pre-boot' VM customizations...
 ==> default: Booting VM...
 ==> default: Waiting for machine to boot. This may take a few minutes...
-    default: SSH address: 127.0.0.1:2222
+    default: SSH address: 127.0.0.1:2200
     default: SSH username: vagrant
     default: SSH auth method: private key
     default: 
@@ -96,7 +91,7 @@ Bringing machine 'default' up with 'virtualbox' provider...
 ==> default: Setting hostname...
 ==> default: Configuring and enabling network interfaces...
 ==> default: Mounting shared folders...
-    default: /vagrant => /Users/aakulov/Documents/Development/Hashicorp/tfe-vagrant-interactive
+    default: /vagrant => /Users/aakulov/Documents/Development/Hashicorp/tfe-vagrant-demo
 
 ```
 
@@ -117,53 +112,6 @@ Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-136-generic x86_64)
  * Support:        https://ubuntu.com/advantage
 New release '20.04.2 LTS' available.
 Run 'do-release-upgrade' to upgrade to it.
-
-```
-
-- Install gpg-agent package
-
-```bash
-sudo apt-get -y install gpg-agent
-```
-
-Sample output
-
-```bash
-$ sudo apt-get -y install gpg-agent
-Reading package lists... Done
-Building dependency tree       
-Reading state information... Done
-The following additional packages will be installed:
-  libnpth0 pinentry-curses
-Suggested packages:
-  dbus-user-session pinentry-gnome3 scdaemon pinentry-doc
-Recommended packages:
-  gnupg
-The following NEW packages will be installed:
-  gpg-agent libnpth0 pinentry-curses
-0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
-Need to get 271 kB of archives.
-After this operation, 1,011 kB of additional disk space will be used.
-Get:1 http://mirrors.ubuntu.com/mirrors.txt Mirrorlist [973 B]
-Get:3 http://nl.archive.ubuntu.com/ubuntu bionic/main amd64 libnpth0 amd64 1.5-3 [7,668 B]
-Get:2 http://mirror.previder.nl/ubuntu bionic/main amd64 pinentry-curses amd64 1.1.0-1 [35.8 kB]
-Get:4 http://ubuntu.mirror.true.nl/ubuntu bionic-updates/main amd64 gpg-agent amd64 2.2.4-1ubuntu1.4 [227 kB]
-Fetched 272 kB in 0s (612 kB/s)
-Selecting previously unselected package pinentry-curses.
-(Reading database ... 100017 files and directories currently installed.)
-Preparing to unpack .../pinentry-curses_1.1.0-1_amd64.deb ...
-Unpacking pinentry-curses (1.1.0-1) ...
-Selecting previously unselected package libnpth0:amd64.
-Preparing to unpack .../libnpth0_1.5-3_amd64.deb ...
-Unpacking libnpth0:amd64 (1.5-3) ...
-Selecting previously unselected package gpg-agent.
-Preparing to unpack .../gpg-agent_2.2.4-1ubuntu1.4_amd64.deb ...
-Unpacking gpg-agent (2.2.4-1ubuntu1.4) ...
-Setting up libnpth0:amd64 (1.5-3) ...
-Setting up pinentry-curses (1.1.0-1) ...
-Setting up gpg-agent (2.2.4-1ubuntu1.4) ...
-Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
-Processing triggers for libc-bin (2.27-3ubuntu1.4) ...
 
 ```
 
@@ -395,59 +343,59 @@ To continue the installation, visit the following URL in your browser:
 
 - In your browser open URL https://192.168.56.33:8800/
 
-![Initial screen](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-1.png)
+![Initial screen](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-1.png)
 
 - Click Advanced - Proceed to 192.168.56.33 (unsafe)
 
-![Proceed](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-2.png)
+![Proceed](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-2.png)
 
 Expected result
 
-![Expected result](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-3.png)
+![Expected result](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-3.png)
 
 - Enter `192.168.56.33.nip.io` to Hostname field and click `Use Self-Signed Cert`
 
-![Self signed](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-4.png)
+![Self signed](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-4.png)
 
 - In your browser open URL https://192.168.56.33.nip.io:8800/
 
-![Upload certificate](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-5.png)
+![Upload certificate](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-5.png)
 
 - Click `Choose license` and select your TFE license file. Then click `Open`
 
-![Upload license](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-6.png)
+![Upload license](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-6.png)
 
 - Click `Online`
 
-![Online](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-7.png)
+![Online](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-7.png)
 
 - Click `Continue`
 
-![Continue](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-8.png)
+![Continue](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-8.png)
 
 - Enter password `Password1#` to Password and Confirm password fields. Click `Continue`
 
-![Password](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-9.png)
+![Password](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-9.png)
 
 - On the next screen scroll down and click `Proceed Anyway`
 
-![Proceed anyway](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-10.png)
+![Proceed anyway](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-10.png)
 
 - Click `Continue`
 
-![Continue](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-11.png)
+![Continue](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-11.png)
 
 - On the Settings page set `Encryption password` as `Password1#` and select installation type `Demo`
 
-![Encryption password](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-12.png)
+![Encryption password](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-12.png)
 
 - Go to the end of the page and click `Save`
 
-![Save](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-13.png)
+![Save](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-13.png)
 
 - Click `Restart now`
 
-![Restart now](https://github.com/antonakv/tfe-vagrant-interactive/raw/main/images/tfe-i-vagrant-14.png)
+![Restart now](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-14.png)
 
 ## Usage
 
