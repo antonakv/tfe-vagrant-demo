@@ -6,5 +6,6 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |v|
     v.memory = 1024 * 4
     v.cpus = 2
+    v.name = "tfe-vagrant-demo"
   end
 end
