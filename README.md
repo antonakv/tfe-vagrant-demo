@@ -381,8 +381,6 @@ Expected result
 
 ![Proceed anyway](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-10.png)
 
-- Click `Continue`
-
 - On the Settings page set `Encryption password` as `Password1#` and select installation type `Demo`
 
 ![Encryption password](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-12.png)
