@@ -377,7 +377,7 @@ Expected result
 
 ![Password](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-9.png)
 
-- On the next screen scroll down and click `Proceed Anyway`
+- On the next screen scroll down and click `Continue`
 
 ![Proceed anyway](https://github.com/antonakv/tfe-vagrant-demo/raw/main/images/tfe-i-vagrant-10.png)
 
